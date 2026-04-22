@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.StudentDashboard"
+             Title="Home">
+    <ScrollView 
+        Padding="15">
+        <Grid
+            RowDefinitions="Auto, Auto, Auto, Auto, *"
+            ColumnDefinitions="*,*,*,*"
+            RowSpacing="13"
+            ColumnSpacing="3">
+
+            <VerticalStackLayout
+                Grid.Row="0"
+                VerticalOptions="Start"
+                Padding="16"
+                Spacing="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="4">
+                
+                <Label
+                    Text="Greetings, User"
+                    FontSize="Large"
+                    FontAttributes="Bold" />
+                <Label
+                    Text="Welcome to your dashboard. Ready to plan your session?"
+                    FontSize="Small" />
+            </VerticalStackLayout>
+
+            <Border
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0,0,4,0"
+                Style="{StaticResource Board}">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#F5A623" Offset="0.0" />
+                        <GradientStop Color="#F7C948" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <VerticalStackLayout
+                    Spacing="8"
+                    Padding="12">
+                    <Label
+                        Text="Book a Slot"
+                        TextColor="Black" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border
+                Grid.Row="1"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Margin="4,0,0,0"
+                Style="{StaticResource SecondBoard}">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#1A56DB" Offset="0.0" />
+                        <GradientStop Color="#3B82F6" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <VerticalStackLayout                     
+                    Spacing="8"
+                    Padding="12">
+                    <Label
+                        Text="My Recent Sessions"
+                        TextColor="White" />
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </ScrollView>
+</ContentPage>

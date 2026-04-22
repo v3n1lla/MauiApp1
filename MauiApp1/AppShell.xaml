@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp1"
+    xmlns:pages="clr-namespace:MauiApp1.Pages"
+    xmlns:m="clr-namespace:UraniumUI.Icons.MaterialIcons;assembly=UraniumUI.Icons.MaterialIcons"
+    Title="MauiApp1" >
+
+    <TabBar>
+        <ShellContent 
+            Title="Home"
+            ContentTemplate="{DataTemplate pages:StudentDashboard}">
+            <ShellContent.Icon>
+                <FontImageSource 
+                    FontFamily="MaterialOutlined"
+                    Glyph="{x:Static m:MaterialOutlined.Home}"
+                    Color="{AppThemeBinding Light=Black, Dark=White}" />
+            </ShellContent.Icon>
+        </ShellContent>
+
+        <ShellContent
+            Title="Booking"
+            ContentTemplate="{DataTemplate pages:Booking}">
+            <ShellContent.Icon>
+                <FontImageSource 
+                    FontFamily="MaterialOutlined"
+                    Glyph="{x:Static m:MaterialOutlined.Calendar_today}"
+                    Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+            </ShellContent.Icon>
+        </ShellContent>
+
+        <ShellContent
+            Title="Slots"
+            ContentTemplate="{DataTemplate pages:ManageSlots}">
+            <ShellContent.Icon>
+                <FontImageSource 
+                    FontFamily="MaterialOutlined"
+                    Glyph="{x:Static m:MaterialOutlined.Event_note}"
+                    Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+            </ShellContent.Icon>
+        </ShellContent>
+
+        <ShellContent
+            Title="Forms"
+            ContentTemplate="{DataTemplate pages:ExcuseLetter}">
+            <ShellContent.Icon>
+                <FontImageSource 
+                    FontFamily="MaterialOutlined"
+                    Glyph="{x:Static m:MaterialOutlined.Description}"
+                    Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+            </ShellContent.Icon>
+        </ShellContent>
+
+    </TabBar>
+
+</Shell>
