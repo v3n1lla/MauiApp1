@@ -9,16 +9,28 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object? sender, EventArgs e)
+        private async void OnLoginClicked(object sender, EventArgs e)
         {
-            count++;
+            string email = EmailEntry.Text;
+            string password = PasswordEntry.Text;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            {
+                ErrorLabel.Text = "Please fill in all Requirements.";
+                ErrorLabel.IsVisible = true;
+                return;
+            }
+
+            // Replace this with your actual authentication logic
+            if (email == "@gmail" && password == "1234")
+            {
+                await Shell.Current.GoToAsync("//Home");
+            }
             else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            {
+                ErrorLabel.Text = "Invalid email or password.";
+                ErrorLabel.IsVisible = true;
+            }
         }
     }
 }

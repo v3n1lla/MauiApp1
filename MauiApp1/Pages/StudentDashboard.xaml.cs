@@ -6,4 +6,13 @@ public partial class StudentDashboard : ContentPage
 	{
 		InitializeComponent();
 	}
+    private async void OnBookSlotClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//Booking");
+    }
+
+    private async void OnManageSlotsClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//ManagedSlots");
+    }
 }

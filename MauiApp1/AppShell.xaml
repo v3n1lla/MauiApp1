@@ -8,7 +8,12 @@
     xmlns:m="clr-namespace:UraniumUI.Icons.MaterialIcons;assembly=UraniumUI.Icons.MaterialIcons"
     Title="MauiApp1" >
 
-    <TabBar>
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+<TabBar>
         <ShellContent 
             Title="Home"
             ContentTemplate="{DataTemplate pages:StudentDashboard}">
@@ -20,7 +25,10 @@
             </ShellContent.Icon>
         </ShellContent>
 
+        
+        
         <ShellContent
+            Route="Booking"
             Title="Booking"
             ContentTemplate="{DataTemplate pages:Booking}">
             <ShellContent.Icon>
@@ -32,6 +40,7 @@
         </ShellContent>
 
         <ShellContent
+            Route="ManagedSlots"
             Title="Slots"
             ContentTemplate="{DataTemplate pages:ManageSlots}">
             <ShellContent.Icon>
